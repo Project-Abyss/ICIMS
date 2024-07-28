@@ -1,2 +1,7 @@
 #.gitignore
 ve
+__pycache__
+*.pem
+.DS_Store
+
+.bessyhuang.env
