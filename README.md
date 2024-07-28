@@ -17,6 +17,8 @@
 		- `icims` -> Default App
 		- `accounts` -> User Management
 		- `journals` -> Work Record Management
+  		- `X509-cert-xxx.pem` -> Certificate for Database Access
+		- `.env` -> Environment Variables
 
 ---
 ## Testing: Database
