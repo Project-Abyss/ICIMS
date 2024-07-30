@@ -21,7 +21,8 @@
 		- `.env` -> Environment Variables
 
 ---
-## How to use
+## Usage
+### How to use
 Follow this 3 Step first. After that, you can follow “Testing: Database” to check your database connection.
 **Step 1. Open command line / terminal. **
 
