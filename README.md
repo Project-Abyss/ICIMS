@@ -21,6 +21,45 @@
 		- `.env` -> Environment Variables
 
 ---
+## How to use
+Follow this 3 Step first. After that, you can follow “Testing: Database” to check your database connection.
+**Step 1. Open command line / terminal. **
+
+**Step 2. Activate venv**
+Go to the ICIMS folder and enter venv. If you have some problem about activate venv, see "### Venv activation"
+```
+$ python -m venv [venv name]
+```
+(It will create a new venv automatically, if you use a new venv name.)
+
+**Step 3. Run Django**
+Run the “manage.py” file. I will suggest that your current location should be same as manage.py .
+```
+$ python manage.py runserver
+```
+
+### Venv activation
+
+[For Windows]
+If you having a error message about "Cannot be loaded because running scripts is disabled on this system." That means you have to modify your execution policy.
+
+To check your execution policy, use this command:
+```
+$ Get-ExecutionPolicy
+```
+If it is not “RemoteSigned” that means your system did not allow your command line execute scripts directly.
+
+For temporary usage, you can use this command to allow current command line execute scripts directly.
+```
+$ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+```
+
+For multiple time usage, you can use this command to change execution policy to allow command line execute scripts directly. Please remember that you have to restart your command line after this command.
+```
+$ Set-ExecutionPolicy RemoteSigned
+```
+
+---
 ## Testing: Database
 
 ### Check the MongoDB Atlas Connection
