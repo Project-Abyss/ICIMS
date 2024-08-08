@@ -35,6 +35,11 @@ $ python -m venv [venv name]
 ```
 (It will create a new venv automatically, if you use a new venv name.)
 
+Access the venv file and actived it:
+```
+$ [venv name]\Scripts\activate
+```
+
 **Step 3. Run Django**
 If you are running this application first time, please make sure you already installed fellow requirement by execute the command `pip install -r requirements.txt`.
 Run the “manage.py” file. I will suggest that your current location should be same as manage.py .
