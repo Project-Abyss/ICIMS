@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'journals',
+    'homepage.apps.HomepageConfig'
 ]
 
 MIDDLEWARE = [
