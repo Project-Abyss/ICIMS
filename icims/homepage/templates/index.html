@@ -1,39 +1,10 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <header class="header">
-        <nav class="nav">
-            <a href="#">Home page</a>
-            <a href="#">Example</a>
-            <a href="#">Example</a>
-            <a href="#">Account</a>
-        </nav>
-        <span class="login-btn" onclick="openModal()">Log in</span>
-    </header>
+{% block title %} Homepage {% endblock %}
 
-    <main class="main-content">
-        <div>狂賀！!</br>以璿終於要畢業了，恭喜她從實驗室解脫</div>
+{% block content %}
+     <main class="main-content">
+        <!-- <div>狂賀！!</br>以璿終於要畢業了，恭喜她從實驗室解脫</div> -->
+        <div> 公告欄 </div>
     </main>
-
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span>Email</span>
-            <input type="email" placeholder="Value">
-            <span>Password</span>
-            <input type="password" placeholder="Value">
-            <button onclick="signIn()">Sign In</button>
-            <a href="#">Forgot password?</a>
-        </div>
-    </div>
-
-    <script src="{% static 'js/script.js' %}"></script>
-</body>
-</html>
+{% endblock %}

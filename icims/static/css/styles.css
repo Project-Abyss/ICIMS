@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f5f3f0;
+    height: 100%;
 }
 .header {
     background-color: #f5f3f0;
@@ -88,4 +89,11 @@ body {
     margin-top: 10px;
     color: #333;
     text-decoration: none;
+}
+.wrapper{
+    min-height: 100%;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
 }

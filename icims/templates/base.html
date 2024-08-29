@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Homepage{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <nav class="nav">
+                <a href="{% url 'homepage' %}">Homepage</a>
+                <a href="{% url 'create_journal' %}">Create Journals</a>
+                <a href="#">Example</a>
+                <a href="#">Account</a>
+            </nav>
+            <span class="login-btn" onclick="openModal()">Log in</span>
+        </header>
+
+    
+        <main>
+            {% block content %}
+
+            {% endblock %}
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Project Abyss. All rights reserved.</p>
+        </footer>
+    </div>
+
+     <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span>Email</span>
+            <input type="email" placeholder="Value">
+            <span>Password</span>
+            <input type="password" placeholder="Value">
+            <button onclick="signIn()">Sign In</button>
+            <a href="#">Forgot password?</a>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    
+    
+</body>
+</html>
