@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
 
-{%block title %}Create Journal{% endblock %}
+{%block title %}建立日誌{% endblock %}
 
 {% block content %}
-<h1>Create a New Journal</h1>
+<h1>建立日誌</h1>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Publish</button>
+    <h2>{{ user.username }}</h2><br />
+    <label for="enterprise">實習機構︰</label>
+    <select name="enterprise" id="enterprise">
+        {% for enterprise in enterprises %}
+            <option value="{{ enterprise.full_name }}">{{ enterprise.full_name }}</option>
+        {% endfor %}
+    </select>
+    <p>標題︰</p>{{ form.title }}<br />
+    <p>內文︰</p><br />
+    {{ form.content }}<br />
+
+    
+    <button type="submit">建立新的日誌</button>
 </form>
 {% endblock %}

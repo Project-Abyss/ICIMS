@@ -3,24 +3,23 @@
 {%block title %}{{journal.title}}{% endblock %}
 
 {% block content %}
-<h1>{{ journal.title }}</h1>
-<p>{{ journal.content }}</p>
+    <h2>{{ journal.title }}</h2>
+    
+    <p><strong>建立日期:</strong> {{ journal.last_updated }}</p>
+    <p><strong>內容:</strong></p>
+    <p>{{ journal.content }}</p>
+    
+    <hr>
+    <h3>回應</h3>
+    <ul>
+        {% for comment in journal.comment_set.all %}
+            <li>{{ comment.content }} - {{ comment.last_updated }}</li>
+        {% empty %}
+            <li>No comments available.</li>
+        {% endfor %}
+    </ul>
 
-<h2>Comments:</h2>
-<ul>
-    {% for comment in comments %}
-    <li>{{ comment.content }} - ny {{comment.user }}</li>
-    {% empty %}
-    <li>No Comments yet.</li>
-    {% endfor %}
-</ul>
 
-<h2>Leave a Comment:</h2>
-<form method="post" action="{% url 'view_journal' journal.id%}">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit">Submit Comment</button>
-</form>
 
 <a href="{% url 'homepage' %}">Back to Homepage</a>
 {% endblock %}

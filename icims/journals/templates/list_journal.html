@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Journal List {% endblock %}
+
+{% block content %}
+    <h2>sheep here is your journals</h2>
+    <a href="{% url 'create_journal' %}" class="">新增日誌</a>
+    <ul>
+        {% for journal in journals %}
+            <li>
+                
+                <a href="{% url 'view_journal' journal.id_str%}">
+                {{ journal.title }}</a> - {{ journal.last_updated }} - ID: {{ journal.id_str}}
+                
+            </li>
+        {% empty %}
+            <li>No journals available.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
