@@ -16,27 +16,31 @@ def create_journal_view(request):
 
 	if request.method == 'POST':
 		form = JournalForm(request.POST)
+
 		if form.is_valid():
-			enterprise_name = form.cleaned_data('enterprise')
+			enterprise_name = form.cleaned_data['enterprise']
 			enterprise = get_object_or_404(Enterprise, full_name=enterprise_name)
-			title = form.cleaned_data('title')
+			title = form.cleaned_data['title']
 			content = form.cleaned_data['content']
 
-			journal = Journal.objects.create(
+			Journal.objects.create(
 				enterprise=enterprise,
 				user=user,
 				title=title,
 				content=content,
 				last_updated=timezone.now()
 			)
-				
+
+			print("Test")
+			print(form.title)
+			
 			return redirect('list_journal')
 		
 		else:
-			print("form is invalid")
+			print("Form is invalid")
 			print(form.errors)
 	else:
-		form = JournalForm()
+		form = JournalForm(enterprise=enterprises)
 
 
 	context = {

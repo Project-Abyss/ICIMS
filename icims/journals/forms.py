@@ -13,6 +13,14 @@ class JournalForm(forms.ModelForm):
 			'title': '日誌標題',
 			'content': '日誌內容',
 		}
+	enterprise = forms.ChoiceField(choices=[], label="Enterprise")
+	title = forms.CharField(max_length=255, label="Title")
+	content = forms.CharField(widget=forms.Textarea, label="Content")
+
+	def __init__(self, *args, **kwargs):
+		enterprises = kwargs.pop('enterprise', [])
+		super().__init__(*args, **kwargs)
+		self.fields['enterprise'].choices = [(e.full_name, e.full_name) for e in enterprises]
 
 
 class CommentForm(forms.ModelForm):
